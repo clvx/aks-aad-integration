@@ -1,0 +1,4 @@
+*.out
+.terraform/
+.key.json
+*.tfvars
