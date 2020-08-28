@@ -1,42 +1,58 @@
-variable "client_id" {}
-variable "client_secret" {}
+variable "sp_client_id" {}
+variable "sp_client_secret" {}
 
 # AKS config
 
 variable "agent_count" {
-    default = 1
+  default = 1
 }
 
 variable "ssh_public_key" {
-    default = "~/.ssh/id_rsa.pub"
+  default = "~/.ssh/id_rsa.pub"
 }
 
 variable "dns_prefix" {
-    default = "rbac"
 }
 
 variable cluster_name {
-    default = "k8srbac"
 }
 
 variable resource_group_name {
-    default = "devopspe"
 }
 
 variable "location" {
-    default = "westus2"
 }
 
 # Config for vm
 
 variable "admin_username" {
-    default = ""
-    description = "Administrator user name for virtual machine"
+  default     = ""
+  description = "Administrator user name for virtual machine"
 }
 
 variable "tags" {
-    default = {
-        Environment = "Development"
-        Dept = "Engineering"
-    }
+  default = {
+    Environment = "Development"
+    Dept        = "Engineering"
+  }
+}
+
+#AD configuration
+
+variable "aad_organization" {
+  default = ""
+}
+
+variable "aad_user_password" {
+  default = ""
+}
+
+#Terraform backend
+
+variable "tf_backend_rg" {
+  default = ""
+}
+
+variable "tf_backend_storage" {
+  default = ""
 }
