@@ -5,13 +5,13 @@ resource "azuread_user" "sre" {
 }
 
 resource "azuread_user" "qa" {
-  user_principal_name = "qa@${var.add_organization}"
+  user_principal_name = "qa@${var.aad_organization}"
   display_name        = "qa"
   password            = var.aad_user_password
 }
 
 resource "azuread_user" "dev" {
-  user_principal_name = "dev@${var.add_organization}"
+  user_principal_name = "dev@${var.aad_organization}"
   display_name        = "dev"
   password            = var.aad_user_password
 }
