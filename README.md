@@ -59,8 +59,9 @@ Load the following variables in your `*.tfvars` file:
 
 ### Connecting to AKS
 
-    export ARM_RG=<aks-resource-group>
-    export ARM_CLUSTER_NAME=<aks-cluster-name>
+    export ARM_RG=$(terraform output resource_group_name)
+    export ARM_CLUSTER_NAME=$(terraform output cluster_name)
+
 
     # To connect to AKS as a cluster admin
     az aks get-credentials --resource-group $ARM_RG --name $ARM_CLUSTER_NAME --overwrite-existing --admin  -f ./config

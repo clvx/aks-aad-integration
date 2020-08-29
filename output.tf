@@ -17,3 +17,11 @@ output "aksqa_object_id" {
 output "aksdev_object_id" {
   value = azuread_group.aksdev.object_id
 }
+
+output "resource_group_name" {
+  value = var.resource_group_name
+}
+
+output "cluster_name" {
+  value = var.cluster_name
+}
