@@ -18,8 +18,6 @@ Load the following variables in your `*.tfvars` file:
     dns_prefix          = ""
     aad_organization    = ""
     aad_user_password   = ""
-    tf_backend_rg       = ""
-    tf_backend_storage  = ""
 
 ## Login to Azure
 
@@ -45,6 +43,19 @@ Load the following variables in your `*.tfvars` file:
 
     export TF_VAR_sp_client_id=$CLIENT_ID
     export TF_VAR_sp_client_secret=$CLIENT_SECRET
+
+### Connecting to Azure storage
+
+    
+    cat < EOF >> azure.tfbackend
+    resource_group_name  = "<resource_group>"
+    storage_account_name = "<storage_account_name>"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+    EOF
+
+    terraform init -backend-config=azure.tfbackend
+
 
 ### Connecting to AKS
 

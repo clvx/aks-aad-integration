@@ -46,13 +46,3 @@ variable "aad_organization" {
 variable "aad_user_password" {
   default = ""
 }
-
-#Terraform backend
-
-variable "tf_backend_rg" {
-  default = ""
-}
-
-variable "tf_backend_storage" {
-  default = ""
-}
